@@ -16,3 +16,5 @@ My personal VIM configuration.
 - Tab                    jump to matching pairs
 - "Q"                    apply makro in register "q".
                          ("qq" to record. "q" to stop recording)
+                         
+- Ctrl+n                 toggle NERDTree
