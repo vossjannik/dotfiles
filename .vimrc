@@ -16,12 +16,6 @@ imap <right> <nop>
 filetype off  " force reloading *after* pathogen loaded
 call pathogen#infect()
 
-" color scheme
-if filereadable(expand("~/.vimrc_background"))
-    let base16colorspace=256
-    source ~/.vimrc_background
-endif
-
 " basic setup
 set autoread        " automatic reload when file is changed by another programm
 set nocompatible    " enter the new century (disable compatibility with VI)
@@ -31,9 +25,8 @@ filetype indent on  " load filetype-specific indent files
 set showmatch       " highlight matching [{()}]
 set lazyredraw      " redraw only when we need to
 set noerrorbells    " disable beeping
-
-" font
 set guifont=Source\ Code\ Pro\ 13
+set cursorline
 
 " line numbers
 set number relativenumber            " enable hybrid line numbers by default
@@ -55,7 +48,7 @@ nnoremap <leader>S :mksession!<cr>
     " save any changes to the current file
 nnoremap <leader>s :update<cr> 
     " toggle line-number mode
-nnoremap <leader>n :call NumberToggle()<cr>
+nnoremap <localleader>n :call NumberToggle()<cr>
 
 " basic key mappings
     " jump to matching pairs easily
@@ -71,7 +64,7 @@ function! StripTrailingWhitespace()
     %s/\s\+$//e
     call cursor(l,s)
 endfunc
-autocmd FileType c,cpp,javascript autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespace()
+autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespace()
 
 " search settings
 set incsearch  " search incrementally as characters are entered
@@ -91,3 +84,13 @@ set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,./
 set writebackup
 set noswapfile
+
+" color scheme
+if filereadable(expand("~/.vimrc_background"))
+    let base16colorspace=256
+    source ~/.vimrc_background
+endif
+let &colorcolumn=join(range(81,999),",")
+" hi CursorLine term=bold cterm=bold guibg=Grey40
+hi CursorLineNr term=bold ctermfg=11 gui=bold guifg=White
+

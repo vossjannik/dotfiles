@@ -1,0 +1,13 @@
+ 
+Leader:        " "     <Space>
+LocalLeader:   \       <Backslash>
+
+"<leader>S"            save current session
+"<leader>s"            save updates to file
+
+"<localleader>n"       toggle between line-number modes
+
+"<Tab>"                jump to matching pairs
+
+"Q"                    apply makro in register "q".
+                       ("qq" to record. "q" to stop recording)
