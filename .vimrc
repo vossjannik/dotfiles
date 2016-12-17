@@ -46,25 +46,35 @@ let maplocalleader="\\"   " set localleader to backslash
     " save session. can be reopened by running 'vim -S' in the console
 nnoremap <leader>S :mksession!<cr>
     " save any changes to the current file
-nnoremap <leader>s :update<cr> 
+nnoremap <leader>s :update<cr>
     " toggle line-number mode
 nnoremap <localleader>n :call NumberToggle()<cr>
 
 " basic key mappings
     " jump to matching pairs easily
 nnoremap <Tab> %
-    " make makros easier to use. qq to record --> q to stop recording --> Q to apply
+    " make makros easier to use. qq to record->q to stop recording->Q to apply
 nnoremap Q @q
+    " toggle NERDTree with Ctrl+n
+map <C-n> :NERDTreeToggle<cr>
 
 
 " remove trailing whitespace on save
-function! StripTrailingWhitespace()
+function! <SID>StripTrailingWhitespace()
     let l = line(".")
     let c = col(".")
     %s/\s\+$//e
-    call cursor(l,s)
+    call cursor(l,c)
 endfunc
+
+
+    " strip trailing whitespace on save
 autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespace()
+    " open NERDTree when no file was specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+    " close vim if the only window left open is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " search settings
 set incsearch  " search incrementally as characters are entered
@@ -91,6 +101,5 @@ if filereadable(expand("~/.vimrc_background"))
     source ~/.vimrc_background
 endif
 let &colorcolumn=join(range(81,999),",")
-" hi CursorLine term=bold cterm=bold guibg=Grey40
 hi CursorLineNr term=bold ctermfg=11 gui=bold guifg=White
 
