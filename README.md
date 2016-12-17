@@ -6,15 +6,15 @@ My personal VIM configuration.
 - LocalLeader:   \       <Backslash>
 
 ### Leader mappings
-- "S"            save current session
-- "s"            save updates to file
+- S      -      save current session
+- s      -      save updates to file
 
 ### Localleader mappings
-- "n"       toggle between line-number modes
+- n     -      toggle between line-number modes
 
 ### Other normal-mode mappings
-- Tab                    jump to matching pairs
-- "Q"                    apply makro in register "q".
+- Tab           -         jump to matching pairs
+- Q           -         apply makro in register "q".
                          ("qq" to record. "q" to stop recording)
                          
-- Ctrl+n                 toggle NERDTree
+- Ctrl+n        -         toggle NERDTree
