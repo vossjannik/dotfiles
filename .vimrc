@@ -56,8 +56,8 @@ nnoremap <Tab> %
     " make makros easier to use. qq to record->q to stop recording->Q to apply
 nnoremap Q @q
     " toggle NERDTree with Ctrl+n
-map <C-n> :NERDTreeToggle<cr>
-
+map <C-N> :NERDTreeToggle<cr>
+map <C-n> :NERDTreeFind<cr>
 
 " remove trailing whitespace on save
 function! <SID>StripTrailingWhitespace()
