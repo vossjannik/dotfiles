@@ -56,8 +56,10 @@ nnoremap <Tab> %
     " make makros easier to use. qq to record->q to stop recording->Q to apply
 nnoremap Q @q
     " toggle NERDTree with Ctrl+n
-map <C-N> :NERDTreeToggle<cr>
+map <C-m> :NERDTreeToggle<cr>
 map <C-n> :NERDTreeFind<cr>
+    " map command t
+map <C-t> :CommandT<cr>
 
 " remove trailing whitespace on save
 function! <SID>StripTrailingWhitespace()
@@ -86,6 +88,7 @@ set softtabstop=4    " number of spaces when editing
 set expandtab        " tabs are spaces
 set autoindent       " always set autoindenting on
 set copyindent       " copy previous indentation on autoindenting
+set shiftwidth=4     " number of spaces indented when calling >
 
 " make backups less annoying
 set backup
@@ -107,9 +110,12 @@ hi CursorLineNr term=bold ctermfg=11 gui=bold guifg=White
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 let g:syntastic_javascript_checkers = ['eslint']
+
+" command-t configuration
+set wildignore+=node_modules/**
+

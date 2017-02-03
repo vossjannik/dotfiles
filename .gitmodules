@@ -1,3 +1,6 @@
 [submodule ".vim/bundle/syntax"]
 	path = .vim/bundle/syntax
 	url = https://github.com/octol/vim-cpp-enhanced-highlight.git
+[submodule ".vim/bundle/command-t"]
+	path = .vim/bundle/command-t
+	url = https://github.com/wincent/command-t.git
