@@ -47,6 +47,13 @@ let maplocalleader="\\"   " set localleader to backslash
 nnoremap <leader>S :mksession!<cr>
     " save any changes to the current file
 nnoremap <leader>s :update<cr>
+    " search current word using double space
+nnoremap <leader><Space> *<cr>
+    " leader + move for moving between splits
+nnoremap <leader>j :wincmd j<cr>
+nnoremap <leader>h :wincmd h<cr>
+nnoremap <leader>k :wincmd k<cr>
+noremap <leader>l :wincmd l<cr>
     " toggle line-number mode
 nnoremap <localleader>n :call NumberToggle()<cr>
 
