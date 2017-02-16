@@ -2,14 +2,14 @@
 My personal VIM configuration.
 
 ## CheatSheet
-- Leader:        " "     <Space>
-- LocalLeader:   \       <Backslash>
+- Leader:        " "     < Space >
+- LocalLeader:   \       < Backslash >
 
 ### Leader mappings
-- S       -      save current session
-- s       -      save updates to file
-- hjkl    -      move between splits
-- <Space> -     search for current word
+- S         -      save current session
+- s         -      save updates to file
+- hjkl      -      move between splits
+- Space " " -     search for current word
 
 ### Localleader mappings
 - n       -      toggle between line-number modes
