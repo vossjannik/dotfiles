@@ -10,12 +10,12 @@
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = https://github.com/vim-syntastic/syntastic.git
-[submodule ".vim/bundle/vim-es6"]
-	path = .vim/bundle/vim-es6
-	url = https://github.com/isRuslan/vim-es6.git
-[submodule ".vim/bundle/syntax"]
-	path = .vim/bundle/syntax
-	url = https://github.com/octol/vim-cpp-enhanced-highlight.git
 [submodule ".vim/bundle/command-t"]
 	path = .vim/bundle/command-t
 	url = https://github.com/wincent/command-t.git
+[submodule ".vim/bundle/vim-polygot"]
+	path = .vim/bundle/vim-polygot
+    url = https://github.com/sheerun/vim-polyglot.git
+[submodule ".vim/bundle/vim-gitgutter"]
+    path = .vim/bundle/vim-gitgutter
+    url = https://github.com/airblade/vim-gitgutter.git

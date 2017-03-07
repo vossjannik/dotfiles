@@ -2,16 +2,6 @@
 " VIMRC by Jannik Voss
 " --------------------
 
-" for practicing
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
-
 " pathogen runtime injection and help indexing
 filetype off  " force reloading *after* pathogen loaded
 call pathogen#infect()
@@ -47,8 +37,8 @@ let maplocalleader="\\"   " set localleader to backslash
 nnoremap <leader>S :mksession!<cr>
     " save any changes to the current file
 nnoremap <leader>s :update<cr>
-    " search current word using double space
-nnoremap <leader><Space> *<cr>
+    " search for current word
+nnoremap <leader>w *<cr>
     " leader + move for moving between splits
 nnoremap <leader>j :wincmd j<cr>
 nnoremap <leader>h :wincmd h<cr>
