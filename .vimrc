@@ -7,6 +7,7 @@ filetype off  " force reloading *after* pathogen loaded
 call pathogen#infect()
 
 " basic setup
+set backspace=indent,eol,start  " fix backspace in gvim
 set autoread        " automatic reload when file is changed by another programm
 set nocompatible    " enter the new century (disable compatibility with VI)
 set encoding=utf8
@@ -15,7 +16,11 @@ filetype indent on  " load filetype-specific indent files
 set showmatch       " highlight matching [{()}]
 set lazyredraw      " redraw only when we need to
 set noerrorbells    " disable beeping
-set guifont=Source\ Code\ Pro\ 13
+set guifont=Source_Code_Pro:h10:cANSI:qDRAFT
+set guioptions-=T  " hide toolbar
+set guioptions-=m  " hide menubar
+set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=L  "remove left-hand scroll bar
 set cursorline
 
 " line numbers
@@ -35,10 +40,10 @@ let mapleader=" "         " remap <Leader> to <Space> as backslashes are too
 let maplocalleader="\\"   " set localleader to backslash
     " save session. can be reopened by running 'vim -S' in the console
 nnoremap <leader>S :mksession!<cr>
-    " save any changes to the current file
-nnoremap <leader>s :update<cr>
-    " search for current word
-nnoremap <leader>w *<cr>
+    " save any changes to the current file (NOTICE: overwrites read-only flag!)
+nnoremap <leader>s :update!<cr>
+    " search current word using double space
+nnoremap <leader><Space> *<cr>
     " leader + move for moving between splits
 nnoremap <leader>j :wincmd j<cr>
 nnoremap <leader>h :wincmd h<cr>
@@ -83,7 +88,9 @@ set hlsearch   " highlight matches
 set tabstop=4        " number of visual spaces per tab
 set softtabstop=4    " number of spaces when editing
 set expandtab        " tabs are spaces
-set autoindent       " always set autoindenting on
+
+set autoindent       " always set autoindenting off/on
+
 set copyindent       " copy previous indentation on autoindenting
 set shiftwidth=4     " number of spaces indented when calling >
 
@@ -116,3 +123,5 @@ let g:syntastic_javascript_checkers = ['eslint']
 " command-t configuration
 set wildignore+=node_modules/**
 
+" default directory
+cd C:/Users/JannikV/Projects
