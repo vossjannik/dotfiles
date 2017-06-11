@@ -2,6 +2,12 @@
 " VIMRC by Jannik Voss
 " --------------------
 
+" settings for latex
+filetype plugin on
+set shellslash
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor='latex'
+
 " pathogen runtime injection and help indexing
 filetype off  " force reloading *after* pathogen loaded
 call pathogen#infect()
@@ -96,9 +102,10 @@ set shiftwidth=4     " number of spaces indented when calling >
 
 " make backups less annoying
 set backup
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,./  " a bunch of better locations for the backups
+set backupdir-=.
+set backupdir^=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp  " a bunch of better locations for the backups
 set backupskip=/tmp/*,/private/tmp/*
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,./
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp
 set writebackup
 set noswapfile
 
@@ -107,7 +114,7 @@ if filereadable(expand("~/.vimrc_background"))
     let base16colorspace=256
     source ~/.vimrc_background
 endif
-let &colorcolumn=join(range(81,999),",")
+let &colorcolumn=join(range(101,999),",")
 hi CursorLineNr term=bold ctermfg=11 gui=bold guifg=White
 
 " syntastic configuration
@@ -122,6 +129,3 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 " command-t configuration
 set wildignore+=node_modules/**
-
-" default directory
-cd C:/Users/JannikV/Projects
