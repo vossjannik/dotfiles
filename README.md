@@ -1,7 +1,7 @@
 # "dotfiles" for VIM
 My personal VIM configuration.
 
-## CheatSheet
+## CheatSheet (WARNING: MIGHT BE OUTDATED)
 - Leader:        " "     < Space >
 - LocalLeader:   \       < Backslash >
 
