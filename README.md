@@ -1,6 +1,20 @@
 # "dotfiles" for VIM
 My personal VIM configuration.
 
+## Plugins
+- base16-vim
+- command-t
+- nerdtree
+- syntastic
+- syntax
+- vim-clang-format
+- vim-easygrep
+- vim-easymotion
+- vim-es6
+- vim-gitgutter
+- vim-latex
+- vim-polyglot
+
 ## CheatSheet (WARNING: MIGHT BE OUTDATED)
 - Leader:        " "     < Space >
 - LocalLeader:   \       < Backslash >
