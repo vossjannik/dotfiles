@@ -91,14 +91,17 @@ set incsearch  " search incrementally as characters are entered
 set hlsearch   " highlight matches
 
 " tabs, spaces and indentation
-set tabstop=4        " number of visual spaces per tab
-set softtabstop=4    " number of spaces when editing
+set tabstop=2        " number of visual spaces per tab
+set softtabstop=2    " number of spaces when editing
+set shiftwidth=2     " number of spaces indented when calling >
+"set tabstop=4        " number of visual spaces per tab
+"set softtabstop=4    " number of spaces when editing
+"set shiftwidth=4     " number of spaces indented when calling >
 set expandtab        " tabs are spaces
 
 set autoindent       " always set autoindenting off/on
 
 set copyindent       " copy previous indentation on autoindenting
-set shiftwidth=4     " number of spaces indented when calling >
 
 " make backups less annoying
 set backup
