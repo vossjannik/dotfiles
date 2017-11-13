@@ -81,8 +81,8 @@ endfunc
     " strip trailing whitespace on save
 autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespace()
     " open NERDTree when no file was specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
     " close vim if the only window left open is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -117,7 +117,7 @@ if filereadable(expand("~/.vimrc_background"))
     let base16colorspace=256
     source ~/.vimrc_background
 endif
-let &colorcolumn=join(range(101,999),",")
+let &colorcolumn=join(range(81,999),",")
 hi CursorLineNr term=bold ctermfg=11 gui=bold guifg=White
 
 " syntastic configuration
@@ -131,4 +131,5 @@ let g:syntastic_check_on_wq = 1
 let g:syntastic_javascript_checkers = ['eslint']
 
 " command-t configuration
-set wildignore+=node_modules/**
+set wildignore+=*/node_modules/*
+set wildignore+=*/.git/*
